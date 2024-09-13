@@ -1,0 +1,97 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div>
+        <p class="btnmenu" (click)="btninicio()">Inicio</p>
+      </div>
+      <div>
+        <p class="btnmenu" (click)="btncerrar()">Cerrar sesión</p>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <div class="container">
+        <div class="header-section">
+          <div class="name-box">
+            <p>Asistencia</p>
+          </div>
+    
+        </div>
+        <div class="name-box2">
+          <p>Hungaro Intensivo</p>
+        </div>
+        
+        <br>
+    
+        <div class="info-box">
+          <div class="info-item">
+            <p>Pedro Carcuro</p>
+            <ion-checkbox></ion-checkbox>
+          </div>
+
+          <div>            
+          </div>
+    
+          <div class="info-item">
+            <p>Ryan Gosling</p>
+            <ion-checkbox></ion-checkbox>
+          </div>
+
+          <div>            
+          </div>
+    
+          <div class="info-item">
+            <p>Gabriel Valencia</p>
+            <ion-checkbox slot="start" checked></ion-checkbox>
+          </div>
+
+          <div>            
+          </div>
+    
+          <div class="info-item">
+            <p>Nikola Tesla</p>
+            <ion-checkbox slot="start" checked></ion-checkbox>
+          </div>
+
+          <div>            
+          </div>
+    
+          <div class="info-item">
+            <p>Pedro Ahumada</p>
+            <ion-checkbox></ion-checkbox>
+          </div>
+
+          <div>            
+          </div>
+    
+          <div class="info-item">
+            <p>Matias Recabarren</p>
+            <ion-checkbox slot="start" checked></ion-checkbox>
+          </div>
+
+          <div>
+            <br>
+            <ion-button (click)="btnconfi()">Confirmar asistencia</ion-button>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+
+
+  </ion-router-outlet>
+</ion-app>

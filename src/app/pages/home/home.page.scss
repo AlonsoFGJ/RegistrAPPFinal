@@ -1,0 +1,21 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .animated-image {
+    width: 100%;
+    max-width: 300px;
+    animation: fadeIn 2s ease-in-out;
+  }
+}
+ion-spinner {
+  display: block;
+  margin: auto;
+  margin-top: 20%; // Ajusta según sea necesario
+}
+
+ion-progress-bar {
+  margin: 20px; // Espaciado
+}

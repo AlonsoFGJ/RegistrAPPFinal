@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <div class="ooo">
+      <h1 class="recuperar">Recuperar contraseña</h1>
+    </div>
+    <br>
+    <br>
+  </div>
+  <br>
+  <br>
+  <div>
+    <ion-item>
+      <ion-input label="Nueva contraseña" placeholder="Ingrese nueva contraseña" [(ngModel)]="campo1"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-input label="Confirme nueva contraseña" placeholder="Ingrese contraseña" [(ngModel)]="campo2"></ion-input>
+    </ion-item>
+    <br>
+    <div class="btn_confirmar">
+      <ion-button (click)="confirmarcontra()">Confirmar</ion-button>
+    </div>
+  </div>
+</ion-content>
+

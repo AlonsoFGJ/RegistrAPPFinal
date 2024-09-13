@@ -1,0 +1,104 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div>
+        <p class="btnmenu" (click)="btninicio()">Inicio</p>
+      </div>
+      <div>
+        <p class="btnmenu" (click)="btncerrar()">Cerrar sesión</p>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <div class="container">
+        <div class="header-section">
+          <div class="name-box">
+            <p>Asistencia</p>
+          </div>
+    
+        </div>
+        <div class="name-box2">
+          <p>Hungaro Intensivo</p>
+        </div>
+        
+        <br>
+    
+        <div class="info-box">
+          <div class="info-item">
+            <p>Pedro Carcuro</p>
+            <ion-label class="porcnok">40%</ion-label>
+          </div>
+
+          <div>
+            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+          </div>
+    
+          <div class="info-item">
+            <p>Ryan Gosling</p>
+            <ion-label class="porcok">100%</ion-label>
+          </div>
+
+          <div>
+            <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+          </div>
+    
+          <div class="info-item">
+            <p>Gabriel Valencia</p>
+            <ion-label class="porcnok">20%</ion-label>
+          </div>
+
+          <div>
+            <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
+          </div>
+    
+          <div class="info-item">
+            <p>Nikola Tesla</p>
+            <ion-label class="porcok">77%</ion-label>
+          </div>
+
+          <div>
+            <mat-progress-bar mode="determinate" value="77"></mat-progress-bar>
+          </div>
+    
+          <div class="info-item">
+            <p>Pedro Ahumada</p>
+            <ion-label class="porcnok">10%</ion-label>
+          </div>
+
+          <div>
+            <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
+          </div>
+    
+          <div class="info-item">
+            <p>Matias Recabarren</p>
+            <ion-label class="porcok">90%</ion-label>
+          </div>
+
+          <div>
+            <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+
+
+  </ion-router-outlet>
+</ion-app>
+
+
+

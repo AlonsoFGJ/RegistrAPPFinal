@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <div class="ooo">
+      <h1 class="recuperar">Recuperar contraseña</h1>
+    </div>
+    <br>
+    <div>
+      <h2 class="comrecuperar">Se enviará un correo (solo si el correo coincide con una cuenta registrada) con un codigo de 6 digitos para recuperar su contraseña</h2>
+    </div>
+    <br>
+  </div>
+
+  <div>
+    <ion-list>
+      <ion-list>
+        <ion-list>
+        <ion-item>
+          <ion-input placeholder="Ingrese su correo"></ion-input>
+        </ion-item>
+        <br>
+        <div class="btn_codigo">
+          <ion-button>Enviar codigo</ion-button>
+        </div>    
+        <br>
+        <ion-item>
+          <ion-input placeholder="Ingrese su codigo" [(ngModel)]="codigo"></ion-input>
+        </ion-item>
+        <br>
+        <div class="btn_enviar">
+          <ion-button (click)="validarcodigo()">Enviar</ion-button>
+        </div>
+        </ion-list>
+      </ion-list>
+    </ion-list>
+  </div>
+
+</ion-content>

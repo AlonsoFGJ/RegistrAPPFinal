@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 100%;
+}
+  
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+  
+.name-box {
+    background-color: #086bffd3;    
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.name-box2 {
+    background-color: #3f3f3fea;    
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+}
+  
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+}
+  
+.info-box {
+    background-color: #3f3f3fea;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+  
+.info-item p {
+    margin-right: 70px; 
+}
+
+.porcok {
+    border: 2px solid #3f3f3fea; 
+    border-radius: 5px;
+    padding: 5px 10px; 
+    font-size: 1em; 
+    color: #000000; 
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.porcnok {
+    border: 2px solid #3f3f3fea; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    font-size: 1em; 
+    color: #d80000; 
+    background-color: #e0e0e0; 
+    font-weight: bold;
+}
+
+.btnmenu{
+    border-radius: 10px;
+    background-color: grey;
+    display: inline-block; 
+    padding: 10px 10px; 
+    text-align: center; 
+}
+
+ion-checkbox {
+    --size: 35px;
+    --checkbox-background-checked: #086bffd3;
+  }

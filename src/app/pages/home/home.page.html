@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content>
+  <div class="image-container" *ngIf="showImage" [@fadeIn]>
+    <img src="../../../assets/img/Logo.png" alt="Imagen de Inicio" />
+  </div>
+</ion-content>
+  <div *ngIf="loading">
+    <ion-spinner name="crescent"></ion-spinner> <!-- Icono de cargando -->
+    <ion-progress-bar [value]="progress"></ion-progress-bar> <!-- Barra de progreso -->
+  </div>
+
