@@ -9,9 +9,16 @@ import { NavController } from '@ionic/angular';
 })
 export class DocentePage implements OnInit {
 
+  nomusuario: string | null = null;
+
   constructor(private alertController: AlertController, private navCtrl: NavController) { }
 
   ngOnInit() {
+    const rol = localStorage.getItem('Rolusuario');
+    this.nomusuario = localStorage.getItem('usuario')
+    if (rol !== 'docente'){
+      this.navCtrl.navigateForward(['/login'])
+    }
   }
 
   docentelista(){
@@ -28,6 +35,9 @@ export class DocentePage implements OnInit {
 
   cerrarsesion(){
     this.navCtrl.navigateForward(['/login'])
+    localStorage.clear();
   }
+
+
 
 }

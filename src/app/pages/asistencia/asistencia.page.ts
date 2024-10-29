@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-asistencia',
   templateUrl: './asistencia.page.html',
@@ -11,6 +12,7 @@ export class AsistenciaPage implements OnInit {
   constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+    
   }
 
   btninicio(){

@@ -7,9 +7,17 @@ import { NavController } from '@ionic/angular';
   templateUrl: './alumno.page.html',
   styleUrls: ['./alumno.page.scss'],
 })
+
+
+
 export class AlumnoPage implements OnInit {
+  nomusuario: string | null = null; //el | null = null es para que en caso de que un valor sea nulo se pase a la consola como undefined
 
   constructor(private alertController: AlertController, private navCtrl: NavController) { }
+
+  
+
+
   alumnolistar(){
     this.navCtrl.navigateForward(['/listacursos-alu'])
   }
@@ -19,9 +27,17 @@ export class AlumnoPage implements OnInit {
 
   cerrarsesion(){
     this.navCtrl.navigateForward(['/login'])
+    localStorage.clear();
   }
 
   ngOnInit() {
+    const rol = localStorage.getItem('Rolusuario');
+    this.nomusuario = localStorage.getItem('usuario')
+    if (rol !== 'alumno'){
+      this.navCtrl.navigateForward(['/login'])
+      
+    }
+    
   }
 
 }

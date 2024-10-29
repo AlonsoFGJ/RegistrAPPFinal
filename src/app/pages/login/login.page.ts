@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from 'src/app/servicios/auth.service';
+
+
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -9,16 +16,34 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private alertController: AlertController, private navCtrl: NavController) { }
 
-  nombre:string=""
-  contrasenia:string=""
+  constructor(private alertController: AlertController,
+     private navCtrl: NavController, private afAuth: AngularFireAuth, private authService: AuthService) { }
+
+  correo:string=""
+  contrasena:string=""
+
 
 
   ngOnInit() {
+    localStorage.clear();
   }
 
-  validarlogin(){
+  async login() {
+    try {
+      const user = await this.authService.login(this.correo, this.contrasena);
+      console.log('Usuario autenticado:', user);
+      this.correo='';
+      this.contrasena='';
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      this.presentAlert();
+    }
+  }
+
+
+
+  /*validarlogin(){
     if (this.nombre=="ryan" && this.contrasenia=="drive") {
       console.log("Bienvenido")
       localStorage.setItem("usuario",this.nombre)
@@ -31,10 +56,13 @@ export class LoginPage implements OnInit {
       console.log("Usuario/Password incorrecto")
       this.presentAlert()
     }
-  }
+  }*/
+
+  
   olvidar_contra(){
     this.navCtrl.navigateForward(['/olvidarcont'])
   }
+
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Login fallido',      
@@ -45,3 +73,4 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 }
+

@@ -76,10 +76,23 @@ const routes: Routes = [
     loadChildren: () => import('./pages/lista-alu/lista-alu.module').then( m => m.ListaAluPageModule)
   },
   {
+    path: 'crudalumno',
+    loadChildren: () => import('./pages/crudalumno/crudalumno.module').then( m => m.CrudalumnoPageModule)
+  },
+  {
+    path: 'crear-qr',
+    loadChildren: () => import('./pages/crear-qr/crear-qr.module').then( m => m.CrearQRPageModule)
+  },
+  {
+    path: 'leer-qr',
+    loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQRPageModule)
+  },
+
+  {
     path: '**',
     loadChildren: () => import('./pages/notfound/notfound.module').then( m => m.NotfoundPageModule)
   },
-
+  
 ];
 
 @NgModule({

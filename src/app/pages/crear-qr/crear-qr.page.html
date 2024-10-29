@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="justify-content: center; text-align: center;">crear QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="qr">
+  <br>
+  <br>
+  <qr-code value="Hello world!" 
+         size="300" 
+         errorCorrectionLevel="M" />
+</ion-content>
+<ion-footer>
+  <ion-button class="volver" expand="block" routerLink="/docente"> Volver</ion-button>
+</ion-footer>

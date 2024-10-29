@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
+import { importProvidersFrom, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { DocentePage } from './docente.page';
+
 
 const routes: Routes = [
   {
@@ -9,6 +11,7 @@ const routes: Routes = [
     component: DocentePage
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
