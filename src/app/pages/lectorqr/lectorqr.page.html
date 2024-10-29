@@ -1,9 +1,10 @@
 <ion-header [translucent]="true">
-
+  <ion-toolbar>
+    <ion-title>QR Lector</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<div>
   <div class="name-box">
     <p>Codigo Qr</p>
   </div>
@@ -11,14 +12,19 @@
   <div class="name-box2">
     <p>Clase: Hungaro Intensivo </p>
   </div>
-  <br>
-  <div class="qr">
-    <img (click)="pasarqr()" src="../../../assets/img/TemplateIcono.png" alt="">
-  </div>
-  <div>
-    <br>
-    <br>
-    <ion-button class="btnvolver" (click)="volver()" style="background-color: blue;border-radius: 15px; margin-left: 100px; margin-right: 100px;">Volver</ion-button>
-  </div>
-</div>
+
+  <ion-list>
+    <ion-item *ngFor="let barcode of barcodes">
+      <ion-label position="stacked">{{ barcode.format }}</ion-label>
+      <ion-input type="text" [value]="barcode.rawValue" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+      <ion-icon name="scan"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-button class="btnvolver" style="background-color: blue; border-radius: 15px; margin-left: 100px; margin-right: 100px;">Volver</ion-button>
 </ion-content>

@@ -1,33 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lectorqr',
   templateUrl: './lectorqr.page.html',
   styleUrls: ['./lectorqr.page.scss'],
 })
-export class LectorqrPage implements OnInit {
+export class LectorqrPage  implements OnInit {
+  isSupported = false;
+  barcodes: Barcode[] = [];
 
-  nomusuario: string | null = null; 
-
-  constructor(private navCtrl: NavController) { }
+  constructor(private alertController: AlertController) {}
 
   ngOnInit() {
-    const rol = localStorage.getItem('Rolusuario');
-    this.nomusuario = localStorage.getItem('usuario')
-    if (rol !== 'alumno'){
-      this.navCtrl.navigateForward(['/login'])
-      
+    BarcodeScanner.isSupported().then((result) => {
+      this.isSupported = result.supported;
+    });
+  }
+
+  async scan(): Promise<void> {
+    const granted = await this.requestPermissions();
+    if (!granted) {
+      this.presentAlert();
+      return;
     }
-    
+    const { barcodes } = await BarcodeScanner.scan();
+    this.barcodes.push(...barcodes);
   }
 
-  volver(){
-    this.navCtrl.navigateForward(['/alumno'])
+  async requestPermissions(): Promise<boolean> {
+    const { camera } = await BarcodeScanner.requestPermissions();
+    return camera === 'granted' || camera === 'limited';
   }
 
-  pasarqr(){
-    this.navCtrl.navigateForward(['/ticket'])
+  async presentAlert(): Promise<void> {
+    const alert = await this.alertController.create({
+      header: 'Permission denied',
+      message: 'Please grant camera permission to use the barcode scanner.',
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
-
 }

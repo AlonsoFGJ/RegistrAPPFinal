@@ -1,27 +1,19 @@
 <ion-header [translucent]="true">
-
+  <ion-toolbar>
+    <ion-title style="justify-content: center; text-align: center; background-color: #086bffd3; border-radius: 8px; padding: 10px 20px;">
+      Hungaro Avanzado</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-<div>
-  <div class="name-box">
-    <p>Codigo Qr</p>
-  </div>
+<ion-content [fullscreen]="true" class="qr">
   <br>
-  <div class="name-box2">
-    <p>Clase: Hungaro Intensivo </p>
-  </div>
   <br>
-  <div class="qr">
-    <img src="../../../assets/img/TemplateIcono.png" alt="">
-  </div>
-  <div>
-    <br>
-    <br>
-    <div class="tiempotext">
-      <p>Este codigo se eliminará en 10 segundos</p>
-    </div>
-    <ion-progress-bar [value]="progress"></ion-progress-bar>
-  </div>
-</div>
+  <qr-code value="Lograste escanear el codigo" 
+         size="400" 
+         errorCorrectionLevel="M" />
+         <p>Este codigo desaparecera tras 1 minuto</p>
 </ion-content>
+
+
+ 
+  

@@ -19,18 +19,24 @@ export class QrPage implements OnInit {
       if (this.progress > 1) {
         setTimeout(() => {
           this.progress = 0;
-        }, 1000);
+        }, 60000);
       }
-    }, 100);
+    }, 60000);
   }
 
-  
+
 
 
   ngOnInit() {
     setTimeout(()=>{
       this.navCtrl.navigateForward(['/lista'])
     },10000)
-  }
 
+   
+  }
+  valorQR:string=''
+  valorQRJSON={
+    codigoCurso:'0001',
+    codigoProfe:'001'
+  }
 }
