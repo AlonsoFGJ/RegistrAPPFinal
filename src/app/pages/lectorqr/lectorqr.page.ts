@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { AlertController } from '@ionic/angular';
 
+import { NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-lectorqr',
   templateUrl: './lectorqr.page.html',
@@ -11,7 +13,7 @@ export class LectorqrPage  implements OnInit {
   isSupported = false;
   barcodes: Barcode[] = [];
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private navCtrl:NavController) {}
 
   ngOnInit() {
     BarcodeScanner.isSupported().then((result) => {
@@ -32,6 +34,10 @@ export class LectorqrPage  implements OnInit {
   async requestPermissions(): Promise<boolean> {
     const { camera } = await BarcodeScanner.requestPermissions();
     return camera === 'granted' || camera === 'limited';
+  }
+
+  volver(){
+    this.navCtrl.navigateBack(['/alumno']);
   }
 
   async presentAlert(): Promise<void> {

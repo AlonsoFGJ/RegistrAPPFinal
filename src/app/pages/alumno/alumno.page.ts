@@ -26,7 +26,7 @@ export class AlumnoPage implements OnInit {
   }
 
   cerrarsesion(){
-    this.navCtrl.navigateForward(['/login'])
+    this.navCtrl.navigateBack(['/login'])
     localStorage.clear();
   }
 
@@ -34,7 +34,7 @@ export class AlumnoPage implements OnInit {
     const rol = localStorage.getItem('Rolusuario');
     this.nomusuario = localStorage.getItem('usuario')
     if (rol !== 'alumno'){
-      this.navCtrl.navigateForward(['/login'])
+      this.navCtrl.navigateBack(['/login'])
       
     }
     

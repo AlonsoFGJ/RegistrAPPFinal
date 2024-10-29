@@ -6,12 +6,10 @@ import { NavController } from '@ionic/angular';
 
 interface Alumno {
   nombre: string; 
-
 }
 
 interface Docente {
   nombre: string; 
-
 }
 
 
@@ -29,17 +27,14 @@ export class AuthService {
 
   
 
-  // Método para el inicio de sesión con correo y contraseña
   async login(email: string, password: string): Promise<any> {
     try {
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
 
-      // Obtiene el UID del usuario
       const uid = result.user?.uid;
       if (!uid) throw new Error('Usuario no autenticado');
 
-      // Verifica en qué colección se encuentra el usuario
-      const role = await this.getUserRole(uid);
+      const role = await this.rolUsuario(uid);
       const datoAlum = await this.obtDataAlumno(uid);
       const datoDoce = await this.obtDataDocente(uid);
       
@@ -71,7 +66,7 @@ export class AuthService {
     }
   }
 
-  async getUserRole(uid: string): Promise<string | null> {
+  async rolUsuario(uid: string): Promise<string | null> {
     try {
       console.log('UID:', uid);
       
@@ -122,4 +117,53 @@ export class AuthService {
   getAuthState() {
     return this.afAuth.authState;
   }
+
+  /*async nuevaContra(correo: string): Promise<string | null> {
+    try {
+      const alumnoDoc = await this.firestore.collection('alumno').doc(correo).get().toPromise();
+      const alumnoExists = alumnoDoc && alumnoDoc.exists;
+      console.log('¿Es alumno?', alumnoExists);
+      const hashedPassword = this.hashPassword(this.hashPassword.); 
+  
+      if (alumnoExists) {
+        await this.firestore.collection('alumno').doc().update({
+          contrasena: hashedPassword,
+        });
+        return 'alumno'; 
+        
+      }
+  
+      const docenteDoc = await this.firestore.collection('docente').doc(correo).get().toPromise();
+      const docenteExists = docenteDoc && docenteDoc.exists;
+      console.log('¿Es docente?', docenteExists); 
+  
+      if (docenteExists) {
+        await this.firestore.collection('docente').doc().update({
+          contrasena: hashedPassword,
+        });
+        return 'docente'; 
+      }
+      return null;
+
+    } catch (error) {
+      console.error('Error al obtener el rol del usuario:', error);
+      return null;
+    }
+  }*/
+
+
+
+  async restContra(correo: string): Promise<any> {
+    try {
+      await this.afAuth.fetchSignInMethodsForEmail(correo);
+      
+      await this.afAuth.sendPasswordResetEmail(correo);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  
+
+
 }

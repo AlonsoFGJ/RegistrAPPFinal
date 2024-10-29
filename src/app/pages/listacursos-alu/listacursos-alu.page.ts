@@ -16,18 +16,18 @@ export class ListacursosAluPage implements OnInit {
     const rol = localStorage.getItem('Rolusuario');
     this.nomusuario = localStorage.getItem('usuario')
     if (rol !== 'alumno'){
-      this.navCtrl.navigateForward(['/login'])
+      this.navCtrl.navigateBack(['/login'])
       
     }
     
   }
 
   btninicio(){
-    this.navCtrl.navigateForward(['/alumno'])
+    this.navCtrl.navigateBack(['/alumno'])
   }
 
   btncerrar(){
-    this.navCtrl.navigateForward(['/login'])
+    this.navCtrl.navigateBack(['/login'])
   }
 
 }

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LeerQRPageRoutingModule } from './leer-qr-routing.module';
+import { ClasesqrPageRoutingModule } from './clasesqr-routing.module';
 
-import { LeerQRPage } from './leer-qr.page';
+import { ClasesqrPage } from './clasesqr.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LeerQRPageRoutingModule
+    ClasesqrPageRoutingModule
   ],
-  declarations: [LeerQRPage]
+  declarations: [ClasesqrPage]
 })
-export class LeerQRPageModule {}
+export class ClasesqrPageModule {}

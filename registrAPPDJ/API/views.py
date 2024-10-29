@@ -24,4 +24,8 @@ class DocenteViewSet(generics.ListCreateAPIView):
         contrasena = self.request.query_params.get('contrasena')
         if nombre and contrasena:
             return Alumno.objects.filter(nombre=nombre, contrasena=contrasena)
-        return Alumno.objects.none()  # Sin credenciales, devuelve una lista vacía
+        return Alumno.objects.none() 
+
+class AsignaturaViewSet(generics.ListCreateAPIView):
+    queryset = Asignatura.objects.all()
+    serializer_class = AsignaturaSerializer

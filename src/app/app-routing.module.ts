@@ -36,10 +36,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/lectorqr/lectorqr.module').then( m => m.LectorqrPageModule)
   },
   {
-    path: 'generarqr',
-    loadChildren: () => import('./pages/generarqr/generarqr.module').then( m => m.GenerarqrPageModule)
-  },
-  {
     path: 'informes',
     loadChildren: () => import('./pages/informes/informes.module').then( m => m.InformesPageModule)
   },
@@ -80,10 +76,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/crudalumno/crudalumno.module').then( m => m.CrudalumnoPageModule)
   },
   {
-
+    path: 'clasesqr',
+    loadChildren: () => import('./pages/clasesqr/clasesqr.module').then( m => m.ClasesqrPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/notfound/notfound.module').then( m => m.NotfoundPageModule)
   },
+
+
   
 ];
 

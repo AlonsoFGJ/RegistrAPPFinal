@@ -22,11 +22,11 @@ export class InformesPage implements OnInit {
   }
 
   btninicio(){
-    this.navCtrl.navigateForward(['/docente'])
+    this.navCtrl.navigateBack(['/docente'])
   }
 
   btncerrar(){
-    this.navCtrl.navigateForward(['/login'])
+    this.navCtrl.navigateBack(['/login'])
   }
 
 }

@@ -15,3 +15,8 @@ class DocenteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Docente
         fields = "__all__"
+
+class AsignaturaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Asignatura
+        fields = "__all__"

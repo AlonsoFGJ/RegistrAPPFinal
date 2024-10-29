@@ -17,7 +17,7 @@ export class ListacursosDocPage implements OnInit {
     const rol = localStorage.getItem('Rolusuario');
     this.nomusuario = localStorage.getItem('usuario')
     if (rol !== 'docente'){
-      this.navCtrl.navigateForward(['/login'])
+      this.navCtrl.navigateBack(['/login'])
       
     }
   }
@@ -27,11 +27,11 @@ export class ListacursosDocPage implements OnInit {
   }
 
   btninicio(){
-    this.navCtrl.navigateForward(['/docente'])
+    this.navCtrl.navigateBack(['/docente'])
   }
 
   btncerrar(){
-    this.navCtrl.navigateForward(['/login'])
+    this.navCtrl.navigateBack(['/login'])
   }
 
 }

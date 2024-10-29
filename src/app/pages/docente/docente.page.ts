@@ -17,7 +17,7 @@ export class DocentePage implements OnInit {
     const rol = localStorage.getItem('Rolusuario');
     this.nomusuario = localStorage.getItem('usuario')
     if (rol !== 'docente'){
-      this.navCtrl.navigateForward(['/login'])
+      this.navCtrl.navigateBack(['/login'])
     }
   }
 
@@ -26,7 +26,7 @@ export class DocentePage implements OnInit {
   }
 
   docentegenerarqr(){
-    this.navCtrl.navigateForward(['/generarqr'])
+    this.navCtrl.navigateForward(['/clasesqr'])
   }
 
   docenteinformes(){
@@ -34,7 +34,7 @@ export class DocentePage implements OnInit {
   }
 
   cerrarsesion(){
-    this.navCtrl.navigateForward(['/login'])
+    this.navCtrl.navigateBack(['/login'])
     localStorage.clear();
   }
 
