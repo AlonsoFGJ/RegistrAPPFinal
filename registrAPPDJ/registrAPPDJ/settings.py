@@ -105,6 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8100",
+    "http://localhost:8101",
+    "http://localhost:8102",
+    "http://localhost:8103",
+    "http://localhost:8104",
+    "http://localhost:8105",
+    "http://localhost:8106",
+    "http://localhost:8107",
 ]
 
 
