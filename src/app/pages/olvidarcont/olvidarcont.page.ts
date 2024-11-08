@@ -50,6 +50,7 @@ export class OlvidarcontPage implements OnInit {
       buttons: ['OK'],
     });
     await alert.present();
+    this.navCtrl.navigateForward(['/login']);
   }
 
 }

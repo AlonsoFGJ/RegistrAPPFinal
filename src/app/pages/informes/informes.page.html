@@ -24,7 +24,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">
+    <ion-content class="ion-padding" id="informe">
       <div class="container">
         <div class="header-section">
           <div class="name-box">
@@ -72,7 +72,7 @@
           <p class="ramoinfo">Asignatura: {{nombre5}}</p>      
         </div>
         <div>
-          <ion-button class="descinfo">Descargar Informe</ion-button>
+          <ion-button class="descinfo" (click)="descargarPDF()">Descargar Informe</ion-button>
         </div>
       </div>
     </ion-content>
