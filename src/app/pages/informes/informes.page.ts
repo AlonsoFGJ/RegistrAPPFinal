@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ApiService } from 'src/app/servicios/api.service';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-informes',
@@ -218,6 +220,28 @@ export class InformesPage implements OnInit {
 
   btncerrar(){
     this.navCtrl.navigateBack(['/login'])
+  }
+
+  descargarPDF() {
+    // Selecciona el elemento HTML que quieres convertir en PDF
+    const elemento = document.getElementById('informe');
+
+    if (elemento) {
+      // Usa html2canvas para capturar el contenido del elemento como imagen
+      html2canvas(elemento).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        
+        // Agregar la imagen al PDF
+        const imgWidth = 210; // A4 width en mm
+        // const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const imgHeight = 430;
+        const position = 0;
+
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        pdf.save('informe.pdf'); // Guarda el PDF con el nombre "informe.pdf"
+      });
+    }
   }
 
 }

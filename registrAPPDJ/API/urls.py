@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^api/alumno/$',AlumnoViewSet.as_view()),
     url(r'^api/docente/$',DocenteViewSet.as_view()),
     url(r'^api/asignatura/$',AsignaturaViewSet.as_view()),
+    url(r'^api/asistencia/$',AsistenciaViewSet.as_view()),
 ]
 
 urlpatterns=format_suffix_patterns(urlpatterns)

@@ -37,56 +37,32 @@
         </div>
         
         <br>
-    
+        
         <div class="info-box">
           <div class="info-item">
-            <p>Pedro Carcuro</p>
-            <ion-checkbox></ion-checkbox>
+            <p>{{nombre1}}</p>
+            <ion-checkbox [(ngModel)]="asistenciaMarcada1"></ion-checkbox>
           </div>
 
           <div>            
           </div>
     
           <div class="info-item">
-            <p>Ryan Gosling</p>
-            <ion-checkbox></ion-checkbox>
+            <p>{{nombre2}}</p>
+            <ion-checkbox [(ngModel)]="asistenciaMarcada2"></ion-checkbox>
           </div>
 
           <div>            
           </div>
     
           <div class="info-item">
-            <p>Gabriel Valencia</p>
-            <ion-checkbox slot="start" checked></ion-checkbox>
-          </div>
-
-          <div>            
-          </div>
-    
-          <div class="info-item">
-            <p>Nikola Tesla</p>
-            <ion-checkbox slot="start" checked></ion-checkbox>
-          </div>
-
-          <div>            
-          </div>
-    
-          <div class="info-item">
-            <p>Pedro Ahumada</p>
-            <ion-checkbox></ion-checkbox>
-          </div>
-
-          <div>            
-          </div>
-    
-          <div class="info-item">
-            <p>Matias Recabarren</p>
-            <ion-checkbox slot="start" checked></ion-checkbox>
+            <p>{{nombre4}}</p>
+            <ion-checkbox [(ngModel)]="asistenciaMarcada4"></ion-checkbox>
           </div>
 
           <div>
             <br>
-            <ion-button (click)="btnconfi()">Confirmar asistencia</ion-button>
+            <ion-button (click)="confirmar()">Confirmar asistencia</ion-button>
           </div>
         </div>
       </div>

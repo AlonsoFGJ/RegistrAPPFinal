@@ -35,3 +35,16 @@ class Asignatura(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Asistencia(models.Model):
+    id=models.AutoField(primary_key=True)
+    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
+    docente = models.ForeignKey(Docente, on_delete=models.CASCADE)
+    asignatura = models.ForeignKey(Asignatura, on_delete=models.CASCADE)
+    porcentaje = models.IntegerField()
+
+    class Meta:
+        unique_together = ('alumno', 'asignatura')
+
+    def __str__(self):
+        return f"{self.alumno} {self.docente} {self.asignatura} {self.porcentaje}"

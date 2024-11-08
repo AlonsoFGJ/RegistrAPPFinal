@@ -7,6 +7,10 @@ from rest_framework.permissions import AllowAny
 # Create your views here.
 
 
+class AsistenciaViewSet(generics.ListCreateAPIView):
+    queryset = Asistencia.objects.all()
+    serializer_class = AsistenciaSerializer
+
 class UsuarioViewSet(generics.ListCreateAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
@@ -29,3 +33,5 @@ class DocenteViewSet(generics.ListCreateAPIView):
 class AsignaturaViewSet(generics.ListCreateAPIView):
     queryset = Asignatura.objects.all()
     serializer_class = AsignaturaSerializer
+
+

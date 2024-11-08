@@ -41,48 +41,33 @@
         <div class="info-box">
           <div class="info-item">
             <p>{{nombre1}}</p>
-            <ion-label class="porcnok">40%</ion-label>
+            <ion-label class="porcok">{{porc1}}%</ion-label>
           </div>
 
           <div>
-            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            <mat-progress-bar mode="determinate" value="{{porc1}}"></mat-progress-bar>
           </div>
     
           <div class="info-item">
             <p>{{nombre2}}</p>
-            <ion-label class="porcok">100%</ion-label>
+            <ion-label class="porcok">{{porc2}}%</ion-label>
           </div>
 
           <div>
-            <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+            <mat-progress-bar mode="determinate" value="{{porc2}}"></mat-progress-bar>
           </div>
     
-          <div class="info-item">
-            <p>{{nombre3}}</p>
-            <ion-label class="porcnok">20%</ion-label>
-          </div>
-
-          <div>
-            <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
-          </div>
     
           <div class="info-item">
             <p>{{nombre4}}</p>
-            <ion-label class="porcok">77%</ion-label>
+            <ion-label class="porcok">{{porc4}}%</ion-label>
           </div>
 
           <div>
-            <mat-progress-bar mode="determinate" value="77"></mat-progress-bar>
+            <mat-progress-bar mode="determinate" value="{{porc4}}"></mat-progress-bar>
           </div>
     
-          <div class="info-item">
-            <p>{{nombre5}}</p>
-            <ion-label class="porcnok">10%</ion-label>
-          </div>
 
-          <div>
-            <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
-          </div>
         </div>
       </div>
     </ion-content>
